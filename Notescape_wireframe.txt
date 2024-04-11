@@ -1,0 +1,47 @@
+
+
+
+	.container
+		header
+			nav
+				ul
+					li
+						.title
+						.content > a
+		main
+			section.intro
+				.intro_heading
+					h1 > span
+			section.links
+				.inner
+					.heading
+						h2
+						p
+					.items
+						{
+						.item
+							a.thum > img
+							span.name
+						} * 12 repeat	
+			section.detail
+				.inner
+					.heading
+						h2
+						p
+					.items
+						{
+						.item
+							span > font-icon
+							b
+							p
+						} * 9 repeat
+			section.since
+				.inner
+					.heading
+						h3
+						p
+		footer
+			.heading
+				h2 > span
+				a
+				
