@@ -1,0 +1,161 @@
+// Import
+@import "variables";
+@import "reset";
+
+// Mixins
+@mixin heading_text {
+}
+
+/* Layout */
+/* ########## Header ########## */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  nav {
+    width: 1280px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    .gnb {
+      display: flex;
+      li {
+        position: relative;
+        width: 150px;
+        text-align: center;
+        cursor: pointer;
+        &:hover .content {
+          opacity: 1;
+          visibility: visible;
+        }
+        .title {
+          display: block;
+          padding: 10px 0;
+          font-size: 18px;
+        }
+        .content {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          width: 200px;
+          padding: 10px 20px;
+          opacity: 0;
+          visibility: hidden;
+          background-color: $color_secondary;
+          transition: 0.5s;
+          a {
+            text-align: left;
+            display: block;
+            padding: 8px 0;
+            transition: 0.2s;
+            &:hover {
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+    .lnb {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      .search_bar {
+        position: relative;
+        width: 40px;
+        height: 40px;
+        input[type="checkbox"] {
+          display: none;
+          &:checked ~ input[type="search"] {
+            border-color: $color_primary;
+            transform: translateY(-50%) scaleX(1);
+            opacity: 1;
+          }
+        }
+        label[for="chk1"],
+        input[type="search"] {
+          position: absolute;
+          right: 0;
+        }
+        label[for="chk1"] {
+          top: 0;
+          display: inline-block;
+          width: inherit;
+          height: inherit;
+          text-align: center;
+          line-height: 40px;
+          border-radius: 50%;
+          z-index: 10;
+          cursor: pointer;
+          &:hover {
+            color: #fff;
+          }
+        }
+        input[type="search"] {
+          width: 200px;
+          height: inherit;
+          padding-left: 15px;
+          padding-right: 30px;
+          border: 1px solid transparent;
+          top: 50%;
+          transform: translateY(-50%) scaleX(0.1);
+          opacity: 0;
+          transform-origin: right;
+          border-radius: 20px;
+          background-color: transparent;
+          transition: 0.5s;
+          color: $color_primary;
+        }
+      }
+      .btn_login {
+        padding: 5px 20px;
+        cursor: pointer;
+        border: 1px solid $color_primary;
+        border-radius: 5px;
+        transition: 0.35s;
+        &:hover {
+          background-color: $color_primary;
+          color: #333;
+        }
+      }
+    }
+  }
+}
+/* ########## Section ########## */
+section {
+  .inner {
+    width: 1280px;
+    margin: auto;
+  }
+  /* ##### Section - Intro ##### */
+  &.intro {
+    height: 100vh;
+    background: url(../images/notescape_intro.jpg) no-repeat center center /
+      cover;
+    .heading {
+      position: absolute;
+      top: 70%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      h2 {
+        font-family: $font_logo;
+        font-size: $font_base * 4;
+        text-align: center;
+        span {
+          display: block;
+          font-family: $font_title;
+          font-size: $font_base * 1.5;
+        }
+      }
+    }
+  }
+  &.links {
+  }
+  &.calender {
+  }
+  &.since {
+  }
+}
+/* ########## Footer ########## */
